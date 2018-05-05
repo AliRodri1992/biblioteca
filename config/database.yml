@@ -1,0 +1,29 @@
+# Default Database Configuration
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+# Developmente Database Configuration
+development:
+  <<: *default
+  database: biblioteca_development
+  username: library_user
+  password: darkstyle66
+
+# Test Database Configuration
+test:
+  <<: *default
+  database: biblioteca_test
+  username: library_user
+  password: darkstyle66
+
+# Production Database Configuration
+production:
+  <<: *default
+  database: biblioteca_production
+  username: library_user
+  password: darkstyle66
